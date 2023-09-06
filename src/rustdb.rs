@@ -1,14 +1,13 @@
 pub mod server {
-    pub mod node;
+    pub mod api;
     pub mod database;
+    pub mod node;
 }
 
-pub mod client { }
+pub mod client {
+    pub mod repl;
+}
 
 pub mod shared {
-    pub mod messages {
-        pub mod insert_message;
-    }
-
-    pub mod message;
+    pub mod messages;
 }

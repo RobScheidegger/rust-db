@@ -1,6 +1,7 @@
 use crate::server::node::Node;
+use std::sync::Mutex;
 
-struct Database {
+pub struct Database {
     // root is a box node of a tuple of str, str
     root: Option<Box<Node<String>>>,
 }
@@ -20,7 +21,7 @@ impl Database {
         }
     }
 
-    pub fn new() -> Database {
+    pub const fn new() -> Database {
         return Database { root: None };
     }
 
@@ -80,6 +81,10 @@ impl Database {
                 }
             }
         }
+    }
+
+    pub fn delete(&mut self, key: &String) -> Result<String, &str> {
+        return Err("Not implemented");
     }
 }
 
